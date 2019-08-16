@@ -11,6 +11,14 @@
 //   * **Project Managers** - extensions of Instructors
 // * **IMPORTANT** - You'll need to create 2 - 3 objects for each class and test them according to their unique Attributes. For example:
 
+// #### Stretch Problem
+
+// * Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
+// * Now that our students have a grade build out a method on the Instructor (this will be used by _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
+// * Add a graduate method to a student.
+//   * This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
+//   * If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
+
 // #### Person
 
 // * First we need a Person class. This will be our `base-class`
@@ -73,6 +81,8 @@ class Instructor extends Person {
    grade(stdobj,subject) {
     console.log(`${stdobj.name} receives a perfect score on ${subject}`) ;
    }
+   // Strech Goal here
+
    stdgrade(stdgradepar) {
      var newgrade = Math.random();
      newgrade < 0.5 ? -newgrade : newgrade;
@@ -128,6 +138,9 @@ class Student extends Person {
     sprintChallenge(subject) {
         console.log(`${this.name} has begun sprint challenge on ${subject}`) ;
     }
+
+    //Stretch Goal here
+
     checkgrade(instrpar){
       if (this.grade > 70 )
       {
@@ -236,7 +249,7 @@ const tlkim = new Teamlead({
   instsheena.grade(stdelmer,"Fortran");  
 
   
-
+// Strech Goal Testing for Instuctor
   stdrose.grade = instsheena.stdgrade(stdrose.grade);  
   console.log(stdrose);
   stdelmer.grade = instsheena.stdgrade(stdelmer.grade);
@@ -247,13 +260,18 @@ const tlkim = new Teamlead({
   stdrose.listsSubjects();
   stdrose.PRAssignment('CSS');
   stdrose.sprintChallenge('CSS'); 
+
+  //Stretch Goal Testing for Student
   console.log("before checkgrade Roses's grade:" + stdrose.grade);
   stdrose.checkgrade(instsheena);
   console.log("after checkgrade roses's grade:" + stdrose.grade);
+  
   stdelmer.speak();
   stdelmer.listsSubjects();
   stdelmer.PRAssignment('HTML');
   stdelmer.sprintChallenge('HTML'); 
+
+  //Stretch Goal Testing for Student
   console.log("before checkgrade Elmer's grade:" + stdelmer.grade);
   stdelmer.checkgrade(instsheena);
   console.log("After checkgrade Elmer's grade:" + stdelmer.grade);
@@ -269,6 +287,8 @@ const tlkim = new Teamlead({
   tlcharles.grade(stdrose,"HTML");
   tlcharles.standUp("WEBPT9");
   tlcharles.debugsCode(stdrose,"Java");
+
+  //Stretch Goal Testing for Team Lead
   console.log("before grading");
   console.log(stdelmer);
   stdelmer.grade = tlcharles.stdgrade(stdelmer.grade);
