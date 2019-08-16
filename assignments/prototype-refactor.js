@@ -31,12 +31,12 @@ Prototype Refactor
       this.dimensions = attr.dimensions;
     }
     destroy() {
-        console.log(`${this.name} was removed from the game.`);
+      return(`${this.name} was removed from the game.`);
       };
   }
   
 //   GameObject.prototype.destroy = function() {
-//     console.log(`${this.name} was removed from the game.`);
+//     return(`${this.name} was removed from the game.`);
 //   };
   
   
@@ -59,13 +59,15 @@ Prototype Refactor
       }
     
       takeDamage = function() {
-        console.log(`${this.name} took damage.`);
+        return(`${this.name} took damage.`);
+        
       };
   }
   
 //   CharacterStats.prototype = Object.create(GameObject.prototype);
 //   CharacterStats.prototype.takeDamage = function() {
-//     console.log(`${this.name} took damage.`);
+//     return(`${this.name} took damage.`);
+  //     
 //   };
   
   
@@ -132,7 +134,7 @@ Prototype Refactor
     });
   
   
-    mage.greet(); // Lilith offers a greeting in Elvish.
+    console.log(mage.greet()); // Lilith offers a greeting in Elvish.
   
     const swordsman = new Humanoid({
       createdAt: new Date(),
@@ -200,16 +202,16 @@ Prototype Refactor
         checkHealth= function() {
             if (this.healthPoints <=0) {
               console.log(`Destroying ${this.name}` );
-               this.destroy();
+               return(this.destroy());
             }
             else {
-              console.log(`${this.name} is the winner`);
+              return(`${this.name} is the winner`);
             }
            
        };
       };
     // Villain.prototype = Object.create(Humanoid.prototype);
-    console.log(Villain);
+    
     
     // Villain.prototype.RemoveHPoint = function(points,healthPoints) {
     //     return healthPoints - points;
@@ -261,17 +263,17 @@ Prototype Refactor
         checkHealth= function() {
             if (this.healthPoints <=0) {
               console.log(`Destroying ${this.name}` );
-               this.destroy();
+               return(this.destroy());
             }
             else {
-              console.log(`${this.name} is the winner`);
+              return(`${this.name} is the winner`);
             }
            
         };
       
       };
     // Hero.prototype = Object.create(Humanoid.prototype);
-    console.log(Hero);
+    
     
     // Hero.prototype.RemoveHPoint = function(points,healthPoints) {
     //   return healthPoints - points;
@@ -311,9 +313,9 @@ Prototype Refactor
       console.log(newHero);
       newHero.healthPoints = newVillain.RemoveHPoint(16,newHero.healthPoints);
       console.log(newHero.name +  "'s new HealthPoint:" + newHero.healthPoints);
-      newHero.checkHealth();
+      console.log(newHero.checkHealth());
       newVillain.healthPoints= newHero.RemoveHPoint(12,newVillain.healthPoints);
       console.log(newVillain.name +  "'s new HealthPoint:" +  newVillain.healthPoints);   
-      newVillain.checkHealth();
+      console.log(newVillain.checkHealth());
       
     
