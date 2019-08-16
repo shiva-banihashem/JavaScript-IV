@@ -127,7 +127,7 @@ class Student extends Person {
        this.previousBackground = attr.previousBackground;
        this.className = attr.className;
        this.favSubjects = attr.favSubjects;
-       this.grade = attr.grade;
+       this.grade = attr.grade;                       
     }
     listsSubjects() {
      console.log(`${this.favSubjects}`);
@@ -177,7 +177,7 @@ class Student extends Person {
   });
 
   
-
+  
 //   #### Project Manager
 
 // * Now that we have instructors and students, we'd be nowhere without our PM's
@@ -249,11 +249,7 @@ const tlkim = new Teamlead({
   instsheena.grade(stdelmer,"Fortran");  
 
   
-// Strech Goal Testing for Instuctor
-  stdrose.grade = instsheena.stdgrade(stdrose.grade);  
-  console.log(stdrose);
-  stdelmer.grade = instsheena.stdgrade(stdelmer.grade);
-  console.log(stdelmer);
+
 
   console.log('<<Student Testing begins>>');
   stdrose.speak();
@@ -261,20 +257,13 @@ const tlkim = new Teamlead({
   stdrose.PRAssignment('CSS');
   stdrose.sprintChallenge('CSS'); 
 
-  //Stretch Goal Testing for Student
-  console.log("before checkgrade Roses's grade:" + stdrose.grade);
-  stdrose.checkgrade(instsheena);
-  console.log("after checkgrade roses's grade:" + stdrose.grade);
   
   stdelmer.speak();
   stdelmer.listsSubjects();
   stdelmer.PRAssignment('HTML');
   stdelmer.sprintChallenge('HTML'); 
 
-  //Stretch Goal Testing for Student
-  console.log("before checkgrade Elmer's grade:" + stdelmer.grade);
-  stdelmer.checkgrade(instsheena);
-  console.log("After checkgrade Elmer's grade:" + stdelmer.grade);
+  
 
   console.log('<<Team Lead Testing begins>>');
   tlkim.speak();
@@ -288,6 +277,21 @@ const tlkim = new Teamlead({
   tlcharles.standUp("WEBPT9");
   tlcharles.debugsCode(stdrose,"Java");
 
+  // Strech Goal Testing for Instuctor
+  console.log("Stretch Goal Testing begins");
+  stdrose.grade = instsheena.stdgrade(stdrose.grade);  
+  console.log(stdrose);
+  stdelmer.grade = instsheena.stdgrade(stdelmer.grade);
+  console.log(stdelmer);
+  //Stretch Goal Testing for Student
+  console.log("before checkgrade Roses's grade:" + stdrose.grade);
+  stdrose.checkgrade(instsheena);
+  console.log("after checkgrade roses's grade:" + stdrose.grade);
+  //Stretch Goal Testing for Student
+  console.log("before checkgrade Elmer's grade:" + stdelmer.grade);
+  stdelmer.checkgrade(instsheena);
+  console.log("After checkgrade Elmer's grade:" + stdelmer.grade);
+  
   //Stretch Goal Testing for Team Lead
   console.log("before grading");
   console.log(stdelmer);
